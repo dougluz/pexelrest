@@ -26,7 +26,7 @@ export type ParsedPexelPhotosResponse = {
   photos: Array<Photo>
 }
 
-type PexelPhotosResponse = {
+export type PexelPhotosResponse = {
   next_page: string,
   page: number,
   per_page: number,

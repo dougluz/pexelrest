@@ -19,4 +19,8 @@ export const Image = styled.img`
   border-radius: 20px;
   width: 100%;
   height: 100%;
+
+  :hover {
+    cursor: pointer;
+  }
 `;

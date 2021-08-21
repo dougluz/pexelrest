@@ -1,6 +1,7 @@
+import { motion } from 'framer-motion';
 import styled from 'styled-components';
 
-export const Grid = styled.div`
+export const Grid = styled(motion.div)`
   margin: 0 auto;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));

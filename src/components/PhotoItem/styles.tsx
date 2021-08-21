@@ -1,10 +1,11 @@
+import { motion } from "framer-motion";
 import styled, { css } from "styled-components";
 
 type ImageProps = {
   vertical: boolean
 }
 
-export const Wrapper = styled.div<ImageProps>`
+export const Wrapper = styled(motion.div)<ImageProps>`
   max-width: 100%;
   border-radius: 20px;
   ${({ vertical }) => vertical ? css`

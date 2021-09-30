@@ -1,5 +1,4 @@
-export namespace API {
-  export type Photo = {
+export type Photo = {
     id: number
     width: number
     height: number
@@ -20,26 +19,24 @@ export namespace API {
     }  
   }
   
-  export type ParsedPexelPhotosResponse = {
-    nextPage: string
-    page: number
-    perPage: number
-    photos: Array<Photo>
-  }
-  
-  export type PexelPhotosResponse = {
-    next_page: string,
-    page: number,
-    per_page: number,
-    photos: Array<Photo>
-  }
-  
-  export type PexelFullResponse = {
-    config: {},
-    data: PexelPhotosResponse
-    headers: {}
-    status: number
-    statusText: string
-  }
+export type ParsedPexelPhotosResponse = {
+  nextPage: string
+  page: number
+  perPage: number
+  photos: Array<Photo>
+}
 
+export type PexelPhotosResponse = {
+  next_page: string,
+  page: number,
+  per_page: number,
+  photos: Array<Photo>
+}
+
+export type PexelFullResponse = {
+  config: {},
+  data: PexelPhotosResponse
+  headers: {}
+  status: number
+  statusText: string
 }

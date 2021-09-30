@@ -1,39 +1,17 @@
 import React from 'react'
-import { fetchPhotos } from './api/getPhotos'
-import { API } from './types'
-import Loading from './components/Loading'
-import Photos from './components/Photos'
 import * as S from './styles'
+import Home from "./pages/Home";
+import {BrowserRouter, Route} from "react-router-dom";
+import {AnimateSharedLayout} from "framer-motion";
 
-function App() {
-  const [photos, setPhotos] = React.useState<Array<API.Photo>>([])
-  const [loading, setLoading] = React.useState(false);
-
-  React.useEffect(() => {
-    async function photos() {
-      setLoading(true)
-      try {
-        const { photos } = await fetchPhotos()
-        setPhotos(photos)
-      } catch (error) {
-        console.log(error)
-      } finally {
-        setLoading(false)
-      }
-    }
-
-    photos()
-  }, [])
-
-  return (
-    <S.View>
-      {loading ? (
-        <Loading />
-      ) : (
-        <Photos data={photos} />
-      )}
-    </S.View>
-  )
-}
+const App = () => (
+  <S.Container>
+    <AnimateSharedLayout type="crossfade">
+      <BrowserRouter>
+        <Route path={["/:id", "/"]} component={Home} />
+      </BrowserRouter>
+    </AnimateSharedLayout>
+  </S.Container> 
+)
 
 export default App

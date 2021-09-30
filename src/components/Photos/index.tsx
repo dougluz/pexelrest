@@ -2,6 +2,9 @@ import React from 'react'
 import { API } from '../../types';
 import PhotoItem from '../PhotoItem'
 import * as S from './styles'
+import Modal from "../Modal";
+import {AnimatePresence} from "framer-motion";
+import {useParams} from "react-router-dom";
 
 type PhotosProps = {
   data: Array<API.Photo>
@@ -20,16 +23,21 @@ const grid = {
 };
 
 const Photos = ({ data }: PhotosProps) => {
+  const { id } = useParams<{ id: string }>()
+  
   const isVertical = (width: number, height: number): boolean => height > width;
 
   return (
     <S.Grid variants={grid} initial="hidden" animate="visible">
       {data.map(({
-        id,
-        src: { large },
-        width,
-        height
-      }) => <PhotoItem key={id} url={large} vertical={isVertical(width, height)} />)}
+                   id,
+                   src: { large },
+                   width,
+                   height
+                 }) => <PhotoItem key={id} id={String(id)} url={large} vertical={isVertical(width, height)} />)}
+      <AnimatePresence>
+        {id && <Modal photoId={id} />}
+      </AnimatePresence>
     </S.Grid>
   )
 }

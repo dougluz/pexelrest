@@ -1,12 +1,14 @@
 import React from 'react'
+import { Link } from "react-router-dom";
 import * as S from './styles'
 
 type PhotoProps = {
+  id: string,
   url: string
   vertical: boolean
 }
 
-const wrapper = {
+const item = {
   hidden: { y: 20, opacity: 0 },
   visible: {
     y: 0,
@@ -14,6 +16,10 @@ const wrapper = {
   }
 };
 
-const PhotoItem: React.FC<PhotoProps> = ({ url, vertical }) => <S.Wrapper variants={wrapper} vertical={vertical}><S.Image src={url} /></S.Wrapper>
+const PhotoItem: React.FC<PhotoProps> = ({ url, vertical, id}) => (
+  <Link to={id}>
+    <S.Image vertical={vertical} variants={item} layoutId={id} src={url}/>
+  </Link>
+)
 
 export default PhotoItem;

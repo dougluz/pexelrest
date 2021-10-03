@@ -5,7 +5,6 @@ export const Container = styled(motion.div)`
   background: #fff;
   width: 40%;
   height: 30%;
-  border-radius: 20px;
   margin-left: 20px;
   align-self: flex-end;
   padding: 10px;

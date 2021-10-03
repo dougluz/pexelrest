@@ -34,6 +34,5 @@ export const Container = styled.div`
 
 export const Image = styled(motion.img)`
   z-index: 2;
-  border-radius: 20px;
   max-height: 100%;
 `;

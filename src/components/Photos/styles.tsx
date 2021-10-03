@@ -9,10 +9,12 @@ export const Grid = styled(motion.div)`
   grid-row-gap: 10px;
   grid-auto-flow: dense;
   justify-content: center;
-  padding: 0 20px;
+  padding: 40px;
+  height: 100%;
   
   @media (max-width: 1024px) {
     grid-template-columns: 1fr 1fr;
+    padding: 10px;
   }
   `
 ;

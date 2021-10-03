@@ -8,7 +8,6 @@ type ImageProps = {
 
 export const Image = styled(motion.img)<ImageProps>`
   object-fit: cover;
-  border-radius: 20px;
   width: 100%;
   height: 100%;
   z-index: 0;
